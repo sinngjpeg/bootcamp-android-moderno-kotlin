@@ -1,4 +1,4 @@
-package com.example.marvelapp.presetation.characters
+package com.example.marvelapp.presentation.characters
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

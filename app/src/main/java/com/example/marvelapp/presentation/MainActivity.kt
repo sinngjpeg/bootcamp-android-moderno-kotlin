@@ -1,10 +1,11 @@
-package com.example.marvelapp.presetation
+package com.example.marvelapp.presentation
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.setupWithNavController
 import com.example.marvelapp.R
 import com.example.marvelapp.databinding.ActivityMainBinding
 
@@ -20,6 +21,7 @@ class MainActivity : AppCompatActivity() {
             supportFragmentManager.findFragmentById(R.id.nav_host_container) as NavHostFragment
 
         navController = navHostFragment.navController
+        binding.bottomNavMain.setupWithNavController(navController)
         appBarConfiguration = AppBarConfiguration(
             setOf()
         )
