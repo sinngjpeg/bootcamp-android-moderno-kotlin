@@ -1,7 +1,6 @@
 package com.example.marvelapp.presentation.characters
 
 import androidx.paging.PagingData
-import androidx.paging.map
 import com.example.core.domain.model.Character
 import com.example.core.usecase.GetCharactersUseCase
 import com.nhaarman.mockitokotlin2.any
@@ -9,9 +8,7 @@ import com.nhaarman.mockitokotlin2.whenever
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.count
-import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.flowOf
-import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.test.TestCoroutineDispatcher
 import kotlinx.coroutines.test.resetMain
 import kotlinx.coroutines.test.runBlockingTest
@@ -23,7 +20,6 @@ import org.junit.Test
 import org.junit.runner.RunWith
 import org.mockito.Mock
 import org.mockito.junit.MockitoJUnitRunner
-import java.lang.RuntimeException
 
 @RunWith(MockitoJUnitRunner::class)
 class CharactersViewModelTest {
