@@ -13,8 +13,10 @@ import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.test.TestCoroutineDispatcher
+import kotlinx.coroutines.test.resetMain
 import kotlinx.coroutines.test.runBlockingTest
 import kotlinx.coroutines.test.setMain
+import org.junit.After
 import org.junit.Assert.assertEquals
 import org.junit.Before
 import org.junit.Test
@@ -77,4 +79,11 @@ class CharactersViewModelTest {
                 .thenThrow(RuntimeException())
             charactersViewModel.charactersPagingData("")
         }
+
+    @ExperimentalCoroutinesApi
+    @After
+    fun tearDownDispatcher() {
+        Dispatchers.resetMain()
+        testDispatcher.cleanupTestCoroutines()
+    }
 }
